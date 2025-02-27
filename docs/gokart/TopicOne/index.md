@@ -29,21 +29,21 @@ ros2 launch ucsd_gokart_launch oakd_lr.launch.py
 
 check rviz2 to visualize
 set Global Options to oak
+add PointCloud 2
 add Camera
 set topic to img_raw
 
 in terminal 3
 source tools/scripts/source_all.sh
 
-
 topic list:
 /diagnostics 
 /joint_states 
 /oak/imu/data
-/oak/rgb/canera_info
+/oak/rgb/camera_info
 /oak/rgb/image_raw
 /oak/rgb/image_raw/compressed 
-/oak/gb/image_raw/compressedDepth
+/oak/rgb/image_raw/compressedDepth
 /oak/rgb/image_raw/theora
 /oak/rgb/image_rect
 /oak/rgb/image_rect/compressed 
@@ -94,14 +94,16 @@ in terminal 3
 ros2 launch ucsd_gokart_launch livox.launch.py 
 
 check rviz2 to visualize
-set Global Options to 
+set Global Options to livox
+add PointCloud 2
+add Camera
 set topic to 
 
 topics that the LiDAR publishes to:
 
 GNSS:
 in terminal 4
-ros2 launch ucsd_gokart_launch septentrio.launch.py 
+ros2 launch ucsd_gokart_launch septentrio_gnss.launch.py 
 
 check rviz2 to visualize
 set Global Options to 
@@ -112,8 +114,8 @@ topics that the GNSS publishes to:
 other commands:
 ros2 launch ucsd_gokart_launch oakd_lr_camera_base.launch.py
 ros2 launch ucsd_gokart_launch oakd_lr_yolo.launch.py
-ros2 launch ucsd_gokart_launch livox.launch.py
-ros2 launch ucsd_gokart_launch septentrio.launch.py 
+ros2 launch ucsd_gokart_launch multi_cam.launch.py
+ros2 launch ucsd_gokart_launch atlas.launch.py
 ros2 node list
 ros2 topic list
 ros2 node info
