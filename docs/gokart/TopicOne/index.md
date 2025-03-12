@@ -20,17 +20,20 @@ source opt/ros/humble/setup.bash
 source tools/scripts/source_all.sh
 rviz2
 
+for old jetson
+cd projects/race_common
+source install/setup.bash
+source tools/scripts/source_all.sh
+rviz2
+
 (for docker:
 docker exec -it nostalgic_engelbart /bin/bash
 docker run -it --privileged --runtime=nvidia --network host ghcr.io/aryan-palaskar/art-built-gk:devel bash
 
 race_common is in opt
 
-setup.bash is in install
 source install/setup.bash
-
 source tools/scripts/source_all.sh
-source_all.sh is in tools/
 )
 
 CAMERA (TERMINAL 2):
